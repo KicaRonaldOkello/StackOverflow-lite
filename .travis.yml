@@ -2,17 +2,17 @@ language: python
 
 python:
     - "3.6"
-cache: pip
+cache: 
+  pip
 
 install:
-
-  -pip install -r requirements.txt
-  -pip install coverage
-  -pip install coveralls
-  -pip install pytest
+  - pip install -r requirements.txt
+  - pip install coverage
+  - pip install coveralls
+  - pip install pytest
 
 script:
-  -pytest 
+  - pytest 
 
 after_success:
-  -coveralls
+  - coveralls
