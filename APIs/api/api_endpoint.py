@@ -23,5 +23,12 @@ def get_all_questions():
     """Returns all questions."""
     return jsonify({'question': QUESTION})
 
+@app.route("/api/v1/questions/<int:questionId>", methods=["GET"])
+def get_specific_question(questionId):
+    """Returns specific question by Id."""
+    usr = [qu for qu in QUESTION if(qu["id"] == questionId)]
+    return jsonify({'qu': usr})
+
+
 if __name__ == '__main__':
     app.run(debug=True)
