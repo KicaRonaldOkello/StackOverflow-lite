@@ -47,14 +47,14 @@ def post_a_question():
     QUESTION.append(qun)
     return jsonify(qun)
 
-@app.route("/api/v1/questions/2/answers", methods=["POST"])
-def add_answer_to_question():
+@app.route("/api/v1/questions/<int:questionId>/answers", methods=["POST"])
+def add_answer_to_question(questionId):
     """Adds answer to question."""
     answers = {
         "id": request.json["id"],
         "ans": request.json["ans"]
     }
-    QUESTION["id" == 2]["answer"].update(answers)
+    QUESTION["id"== questionId]["answer"].update(answers)
     return jsonify(answers)
 
 
