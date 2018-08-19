@@ -1,5 +1,4 @@
 import unittest
-import json
 from api_endpoint import app
 
 
@@ -14,6 +13,10 @@ class TestAllApiEndPoints(unittest.TestCase):
         response = self.client.get("http://localhost:5000/api/v1/questions")
         self.assertEquals(response.status_code, 200)
 
+    def test_get_specific_question(self):
+        """Test method that fetches specific question."""
+        response = self.client.get("http://localhst:5000/api/v1/questions/1")
+        self.assertEquals(response.status_code, 200)
 
 
 if __name__ == '__main__':
