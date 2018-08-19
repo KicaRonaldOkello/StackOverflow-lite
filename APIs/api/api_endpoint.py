@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import jsonify
+from flask import request
 
 app = Flask(__name__)
 
@@ -26,9 +27,18 @@ def get_all_questions():
 @app.route("/api/v1/questions/<int:questionId>", methods=["GET"])
 def get_specific_question(questionId):
     """Returns specific question by Id."""
-    usr = [qu for qu in QUESTION if(qu["id"] == questionId)]
+    usr = [qu for qu in QUESTION if qu["id"] == questionId]
     return jsonify({'qu': usr})
 
+@app.route("/api/v1/questions", methods=["POST"])
+def post_a_question():
+    """Adds a question."""
+    qun = {
+        "id": request.json["id"],
+        "title": request.json["title"]
+    }
+    QUESTION.append(qun)
+    return jsonify(qun)
 
 if __name__ == '__main__':
     app.run(debug=True)
