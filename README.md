@@ -8,7 +8,4 @@ here is my badge for travis-CI: [![Build Status](https://travis-ci.org/KicaRonal
 
 Codeclimate maintainability badge: [![Maintainability](https://api.codeclimate.com/v1/badges/ceac1a4f17c0022ca7bb/maintainability)](https://codeclimate.com/github/KicaRonaldOkello/StackOverflow-lite/maintainability)
 
-Heroku link: 
-
-       https://peaceful-meadow-45236.herokuapp.com/
 
