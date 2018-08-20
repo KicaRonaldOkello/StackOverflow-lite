@@ -1,3 +1,5 @@
+This branch contains 4 endpoints, an enpoint where a user can get questions, an endpoint where a user can get a specific question, an enpoint where a user can post a question and finally an endpoint where a user can add answers to a question.
+
 # StackOverflow-lite
 StackOverflow-lite is a platform where people can ask questions and provide answers
 Access my gh-pages here: https://KicaRonaldOkello.github.io/StackOverflow-lite/UI
