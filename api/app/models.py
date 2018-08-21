@@ -1,21 +1,23 @@
 from app import app
-from flask import jsonify, json, request
+from flask import jsonify, request, json, make_response
 
 QUESTION = []
 
 class questions:
-    #def __init__(self, id, title, description):
-        #self.id = id = 0
-        #self.title = title
-        #self.description = description
 
-    def post_question(self):
-        #self.id = self.id + 1
-        dat = {
-        "title": request.json["title"],
-        "description": request.json["description"]
+    def post_question(self): 
+        data = {
+            "id": len(QUESTION) + 1,
+            "title": request.json["title"],
+            "description": request.json["description"]
     }
-        QUESTION.append(dat)
-        return {'question': QUESTION}
+        if data["title"]== "":
+            return make_response(jsonify({"error": "Empty question title"}), 404)
+        if data["description"] == "":
+            return make_response(jsonify({"Error": "Empty question body"}), 404)
+        else:
+            QUESTION.append(data)
+            return jsonify({'question': QUESTION})
+
 
 
