@@ -2,6 +2,7 @@ from app import app
 from flask import jsonify, request, json, make_response
 
 QUESTION = []
+ANSWER = []
 
 class questions:
 
@@ -12,25 +13,38 @@ class questions:
             "description": request.json["description"]
     }
         if data["title"]== "":
-            return make_response(jsonify({"error": "Empty question title"}), 204)
+            return make_response(jsonify({"error": "Empty question title"}), 400)
         if data["description"] == "":
-            return make_response(jsonify({"Error": "Empty question body"}), 204)
+            return make_response(jsonify({"Error": "Empty question body"}), 400)
         else:
             QUESTION.append(data)
             return make_response(jsonify({'question': data}), 201)
 
     def get_question(self):
-        return make_response(jsonify({'questions': QUESTION}), 200)
+        if QUESTION == []:
+            return make_response(jsonify({"Error": "No questions yet"}), 400)
+        else:
+            return make_response(jsonify({'questions': QUESTION}), 200)
 
     def get_one_question(self, questionId):
-        if type(questionId) == int:
-            if questionId <= len(QUESTION):
-                oneQ = [k for k in QUESTION if k["id"] == questionId]
-                return make_response(jsonify({'question': oneQ}), 200)
-            else:
-                return make_response(jsonify({"Error": "Question does not exist"}), 204)
-        if type(questionId) == chr:
-            return make_response(jsonify({"Error": "Wrong question id. Use integer"}), 405)
+        oneQ = [k for k in QUESTION if k["id"] == questionId]
+        if oneQ:
+            return make_response(jsonify({'question': oneQ}), 200)
+        else:
+            return make_response(jsonify({"Error": "Question does not exist"}), 404)
+        
+
+    def add_an_answer(self, questionId):
+        answer = {
+            "Q_id": questionId,
+            "A_id": len(ANSWER) + 1,
+            "answer": request.json["answer"]
+        }
+        check = [a for a in QUESTION if a["id"] == questionId]
+        if check:
+            ANSWER.append(answer)
+            return make_response(jsonify({"answer": ANSWER}), 201)
+
 
 
 
