@@ -13,3 +13,9 @@ share/
 #Ignore file 'pip-selfcheck.json'
 pip-selfcheck.json
 
+views.pyc
+
+models.pyc
+
+__init__.pyc
+
