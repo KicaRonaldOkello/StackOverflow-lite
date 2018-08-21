@@ -17,7 +17,7 @@ class questions:
             return make_response(jsonify({"Error": "Empty question body"}), 404)
         else:
             QUESTION.append(data)
-            return jsonify({'question': QUESTION})
+            return make_response(jsonify({'question': QUESTION}), 201)
 
 
 
