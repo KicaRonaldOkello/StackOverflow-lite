@@ -1,5 +1,5 @@
 import unittest
-from api.app import app
+from app import app
 import json
 
 class TestEndpoint(unittest.TestCase):
@@ -8,7 +8,6 @@ class TestEndpoint(unittest.TestCase):
 
     def test_create_question(self):
         sample = {
-            "id": 2,
             "title": "how to test?",
             "description": "briefly explain unittesting"
         }
@@ -21,7 +20,6 @@ class TestEndpoint(unittest.TestCase):
 
     def test_get_one_question(self):
         sample2 = {
-            "id": 1,
             "title": "Test data",
             "description": "How do you do unittest?"
         }
@@ -31,14 +29,11 @@ class TestEndpoint(unittest.TestCase):
 
     def test_post_answer(self):
         test_data = {
-            "id": 1,
             "title": "Trial data",
             "description": "How do you do unittest?"
         }
         self.client.post("/api/v1/questons", data = json.dumps(test_data), content_type = 'application/json')
         ans_data = {
-            "Q_id": 1,
-            "A_id": 1,
             "answer": "This is the answer"
         }
         response = self.client.post("/api/v1/questions/1/answers", data = json.dumps(ans_data), content_type = 'application/json')

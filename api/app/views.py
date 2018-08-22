@@ -1,5 +1,5 @@
 from app import app
-from models import questions
+from app.models import questions
 from flask import jsonify, request, json
 
 quest = questions()
