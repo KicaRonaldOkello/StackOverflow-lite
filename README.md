@@ -33,13 +33,15 @@ These instructions will get you a copy of the project up and running on your loc
  - Run the flask app in your terminal.
  
     `python run.py`
+    
  -There are 4 endpoints which can be accessed in the following way.
- | Method | Endpoint | Status Code |
- |---------|---------|-------------|
- | GET | "/api/v1/questions" | 200 |
- | GET | "/api/v1/questions/<questionId>" | 200 |
- | POST | "/api/v1/questions" | 201 |
- | POST | "/api/v1/questions/<questionId>/answers" |201 |
+ 
+   | Method | Endpoint | Status Code |
+   |--------|----------|-------------|
+   | GET | "/api/v1/questions" | 200 |
+   | GET | "/api/v1/questions/<questionId>" | 200 |
+   | POST | "/api/v1/questions" | 201 |
+   | POST | "/api/v1/questions/<questionId>/answers" |201 |
   
  -Open Postman, choose any of the methods from the table and enter its approopiate end point.
  - After clicking send, Postman should return the corresponding status code.
