@@ -1,18 +1,17 @@
 language: python
 
 python:
-  - "3.6"
+    - "3.6"
 cache:
-  pip
+    pip
 
 install:
-  - pip install -r requirements.txt
-  - pip insall coverage
-  - pip install coveralls
-  - pip install pytest
-
+    - pip install -r requirements.txt
+    - pip insall coverage
+    - pip install coveralls
+    - pip install pytest
 script:
-pytest -v --cov api/app --cov-report term
+    pytest -v --cov api/app --cov-report term
 
 after_success:
-  - coveralls
+    - coveralls
