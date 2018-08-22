@@ -7,13 +7,15 @@ These instructions will get you a copy of the project up and running on your loc
 - Serverside Framework: Flask Python Framework.
 - Testing Framework: PyTest
 - API development environment: Postman
+
+
+# Installing.
 - Create a directory called StackOverflow-lite.
     'mkdir StackOverflow-lite'
 - Enter the directory.
     'cd StackOverflow-lite'
 - Clone the project from github using:
      git clone http://www.github.com/KicaRonaldOkello/StackoOverflow-lite/tree/api
-# Installing.
 - Install virtualenvironment.
     'pip install virtualenv'
 - Activate virtualenvironment 
@@ -26,7 +28,7 @@ These instructions will get you a copy of the project up and running on your loc
     'python run.py'
  -There are 4 endpoints which can be accessed in the following way.
  | Method | Endpoint | Status Code |
- ------------------------------------
+ |---|---|---|
  | GET | "/api/v1/questions" | 200 |
  | GET | "/api/v1/questions/<questionId>" | 200 |
  | POST | "/api/v1/questions" | 201 |
