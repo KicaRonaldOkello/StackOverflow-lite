@@ -11,6 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 # Installing.
 - Create a directory called StackOverflow-lite.
+
     `mkdir StackOverflow-lite`
 - Enter the directory.
     `cd StackOverflow-lite`
