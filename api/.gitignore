@@ -1,0 +1,21 @@
+#Ignore file 
+.vscode
+#Ignore folder 'bin'
+bin/
+#Ignore folder 'include'
+include/
+#Ignore folder 'lib'
+lib/
+#Ignore folder 'local'
+local/
+#Ignore folder 'share'
+share/
+#Ignore file 'pip-selfcheck.json'
+pip-selfcheck.json
+
+views.pyc
+
+models.pyc
+
+__init__.pyc
+
