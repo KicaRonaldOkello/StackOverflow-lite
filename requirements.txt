@@ -6,7 +6,6 @@ coverage==4.5.1
 Flask==1.0.2
 funcsigs==1.0.2
 gunicorn==19.9.0
-gyp==0.1
 itsdangerous==0.24
 Jinja2==2.10
 lazy-object-proxy==1.2.1
