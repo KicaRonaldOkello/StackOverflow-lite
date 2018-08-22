@@ -1,6 +1,10 @@
 # StackOverflow-lite
 StackOverflow-lite is a platform where people can ask questions and provide answers.
 
+[![Build Status](https://travis-ci.org/KicaRonaldOkello/StackOverflow-lite.svg?branch=api)](https://travis-ci.org/KicaRonaldOkello/StackOverflow-lite)
+[![Coverage Status](https://coveralls.io/repos/github/KicaRonaldOkello/StackOverflow-lite/badge.svg?branch=api)](https://coveralls.io/github/KicaRonaldOkello/StackOverflow-lite?branch=api)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ceac1a4f17c0022ca7bb/maintainability)](https://codeclimate.com/github/KicaRonaldOkello/StackOverflow-lite/maintainability)
+
 # Getting Started.
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 # Prerequisites.
