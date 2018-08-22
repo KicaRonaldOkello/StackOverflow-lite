@@ -7,7 +7,7 @@ cache:
 
 install:
     - pip install -r requirements.txt
-    - pip insall coverage
+    - pip install coverage
     - pip install coveralls
     - pip install pytest
 script:
