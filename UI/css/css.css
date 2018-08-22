@@ -1,0 +1,35 @@
+
+.signup,.signin,.content{
+	text-align: center;
+}
+.navbar{
+	background-color:#fafafb;
+	font-size:30px;
+	text-align: right;
+	padding: 20px;
+	
+}
+a{
+	text-decoration: none;
+}
+.question{
+	width: 45%;
+}
+.recent{
+	text-align: left;
+	padding-left: 60px;
+}
+.answers{
+	padding-left: 6pc;
+	padding-right: 10pc;
+}
+p.small{
+	font-size: 10px;
+}
+textarea{
+	width: 60%;
+
+}
+.profile{
+	padding-left: 6pc;
+}
