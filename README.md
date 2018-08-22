@@ -28,7 +28,7 @@ These instructions will get you a copy of the project up and running on your loc
     'python run.py'
  -There are 4 endpoints which can be accessed in the following way.
  | Method | Endpoint | Status Code |
- |---|---|---|
+ |---------|---------|-------------|
  | GET | "/api/v1/questions" | 200 |
  | GET | "/api/v1/questions/<questionId>" | 200 |
  | POST | "/api/v1/questions" | 201 |
@@ -54,7 +54,7 @@ These instructions will get you a copy of the project up and running on your loc
   # Authors.
   - Kica Ronald Okello.
   
-  #Contributors.
+  # Contributors.
   - Innocent Asiimwe
  
   
