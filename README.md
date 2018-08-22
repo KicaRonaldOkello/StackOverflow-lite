@@ -14,18 +14,24 @@ These instructions will get you a copy of the project up and running on your loc
 
     `mkdir StackOverflow-lite`
 - Enter the directory.
+
     `cd StackOverflow-lite`
 - Clone the project from github using:
+
      git clone http://www.github.com/KicaRonaldOkello/StackoOverflow-lite/tree/api
 - Install virtualenvironment.
+
     `pip install virtualenv`
 - Activate virtualenvironment 
+
     `. bin/activate`
 - Install flask
+
     `pip install flask`
 - Install Postman.
  # Running the API.
  - Run the flask app in your terminal.
+ 
     `python run.py`
  -There are 4 endpoints which can be accessed in the following way.
  | Method | Endpoint | Status Code |
@@ -47,8 +53,10 @@ These instructions will get you a copy of the project up and running on your loc
   # Running unittests.
   In order to know whether our endpoints are working, we can run unittests.
   - In your terminal:
+  
     `pip install pytest`
   - Test your endpoints in the terminal
+  
     `pytest tests/test_views.py`
   - It returns results showing which endpoints passed the tests and which endpoints failed the tests.
   
