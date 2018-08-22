@@ -12,13 +12,15 @@ class questions:
             "title": request.json["title"],
             "description": request.json["description"]
     }
+        result = [d for d in QUESTION if d['title'] == data['title']]
         if data["title"]== "":
             return make_response(jsonify({"error": "Empty question title"}), 400)
         if data["description"] == "":
             return make_response(jsonify({"Error": "Empty question body"}), 400)
-        else:
+        if not result:
             QUESTION.append(data)
             return make_response(jsonify({'question': data}), 201)
+        return make_response(jsonify({"Error": "Duplicate"}), 400)
 
     def get_question(self):
         if QUESTION == []:
@@ -41,9 +43,11 @@ class questions:
             "answer": request.json["answer"]
         }
         check = [a for a in QUESTION if a["id"] == questionId]
-        if check:
+        checkanswer = [a for a in ANSWER if a["answer"] == answer['answer']]
+        if check and not checkanswer:
             ANSWER.append(answer)
-            return make_response(jsonify({"answer": ANSWER}), 201)
+            return make_response(jsonify({"answer":answer["answer"]}), 201)
+            
 
 
 

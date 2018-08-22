@@ -1,4 +1,3 @@
-
 from app import app
 from models import questions
 from flask import jsonify, request, json
@@ -20,4 +19,8 @@ def getaQ(questionId):
 @app.route("/api/v1/questions/<int:questionId>/answers", methods = ["POST"])
 def createA(questionId):
     return quest.add_an_answer(questionId)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return jsonify({'Message': 'Page not found'}), 404
 
