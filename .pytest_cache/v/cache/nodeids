@@ -1,1 +1,6 @@
-[]
+[
+  "tests/test_views.py::TestEndpoint::test_create_question", 
+  "tests/test_views.py::TestEndpoint::test_get_one_question", 
+  "tests/test_views.py::TestEndpoint::test_get_questions", 
+  "tests/test_views.py::TestEndpoint::test_post_answer"
+]

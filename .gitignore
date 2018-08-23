@@ -21,3 +21,4 @@ tests/__init__.pyc
 __init__.pyc
 app/views.pyc
 app/models.pyc
+*.pyc
