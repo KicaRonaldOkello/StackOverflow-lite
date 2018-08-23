@@ -1,54 +1,32 @@
-from app import app
-from flask import jsonify, request, json, make_response
+"""Handles all the data manipulation."""
 
 QUESTION = []
 ANSWER = []
 
-class questions:
 
-    def post_question(self): 
-        data = {
-            "id": len(QUESTION) + 1,
-            "title": request.json["title"],
-            "description": request.json["description"]
-    }
-        result = [d for d in QUESTION if d['title'] == data['title']]
-        if data["title"]== "":
-            return make_response(jsonify({"error": "Empty question title"}), 400)
-        if data["description"] == "":
-            return make_response(jsonify({"Error": "Empty question body"}), 400)
-        if not result:
-            QUESTION.append(data)
-            return make_response(jsonify({'question': data}), 201)
-        return make_response(jsonify({"Error": "Duplicate"}), 400)
+class Questions:
+    """Class to handle question actions."""
+
+    def post_question(self, data):
+        """Method to questions."""
+        data["id"] = (len(QUESTION) + 1)
+        QUESTION.append(data)
+        return data
 
     def get_question(self):
-        if QUESTION == []:
-            return make_response(jsonify({"Error": "No questions yet"}), 400)
-        else:
-            return make_response(jsonify({'questions': QUESTION}), 200)
+        """Method to return all questions."""
+        return QUESTION
 
     def get_one_question(self, questionId):
-        oneQ = [k for k in QUESTION if k["id"] == questionId]
-        if oneQ:
-            return make_response(jsonify({'question': oneQ}), 200)
-        else:
-            return make_response(jsonify({"Error": "Question does not exist"}), 404)
-        
-
-    def add_an_answer(self, questionId):
-        answer = {
-            "Q_id": questionId,
-            "A_id": len(ANSWER) + 1,
-            "answer": request.json["answer"]
-        }
-        check = [a for a in QUESTION if a["id"] == questionId]
-        checkanswer = [a for a in ANSWER if a["answer"] == answer['answer']]
-        if check and not checkanswer:
-            ANSWER.append(answer)
-            return make_response(jsonify({"answer":answer["answer"]}), 201)
-            
+        """Method to return one question."""
+        return QUESTION["id" == questionId]["title"]
 
 
+class Answers:
+    """Class to handle answer actions."""
 
-
+    def add_an_answer(self, questionId, answer):
+        """Method to add answers."""
+        answer["Q_id"] = questionId
+        answer["A_id"] = (len(ANSWER) + 1)
+        ANSWER.append(answer)

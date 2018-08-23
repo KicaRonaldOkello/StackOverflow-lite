@@ -10,7 +10,7 @@ install:
   - pip install pytest
 
 script:
-pytest -v --cov api/app --cov-report term
+  - py.test --cov=app tests/
 
 after_success:
   - coveralls
