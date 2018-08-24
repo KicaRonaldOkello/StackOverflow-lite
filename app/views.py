@@ -55,7 +55,7 @@ def create_a(questionId):
     if check and not checkanswer:
         ans.add_an_answer(questionId, answer)
         return make_response(jsonify({"answer": answer["answer"]}), 201)
-    return make_response(jsonify({"Message": "No such question"}), 201)
+    return make_response(jsonify({"Message": "Answer exists"}), 400)
 
 
 @app.errorhandler(404)

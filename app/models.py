@@ -19,7 +19,12 @@ class Questions:
 
     def get_one_question(self, questionId):
         """Method to return one question."""
-        return QUESTION["id" == questionId]["title"]
+        result=None
+        for qtn in QUESTION:
+            if qtn["id"]==questionId:
+                result=qtn
+                break
+        return result and result["title"]
 
 
 class Answers:
