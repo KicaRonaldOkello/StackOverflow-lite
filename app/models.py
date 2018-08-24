@@ -19,7 +19,7 @@ class Questions:
 
     def get_one_question(self, questionId):
         """Method to return one question."""
-        return QUESTION["id" == questionId]["title"]
+        return QUESTION[questionId == "id"]["title"]
 
 
 class Answers:
